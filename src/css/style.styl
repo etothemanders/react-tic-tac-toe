@@ -1,11 +1,29 @@
 // Import all partials
 @require './_*.styl'
 
-.board .row
-	display flex
+.game
+	position relative
+	width 100%
+	height 100vh
+
+.board
+	position absolute
+	top 50%
+	left 50%
+	transform translate(-50%, -50%)
+	border 1px solid black
+
 
 .tile
-	min-height 50px
-	min-width 50px
-	border 1px solid black
-	text-align center
+	width calc(5vw - 1px)
+	height calc(5vw - 1px)
+	display inline-block
+	&:not(:last-child)
+		border-right 1px solid black
+
+
+.row
+	line-height 0
+	&:not(:last-child)
+		.tile
+			border-bottom 1px solid black

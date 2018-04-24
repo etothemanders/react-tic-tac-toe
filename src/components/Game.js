@@ -9,13 +9,17 @@ class Game extends React.Component {
 		winner: null,
 	};
 
+	componentDidMount = () => {
+		this.startGame();
+	}
+
 	drawBoard = () => {
 		let board = [];
 
-		for (let i=0; i < 3; i++) {
+		for (let i=0; i < 10; i++) {
 			let row = [];
 
-			for (let j=0; j < 3; j++) {
+			for (let j=0; j < 10; j++) {
 				let tile = {
 					owner: false,
 				};
@@ -148,9 +152,9 @@ class Game extends React.Component {
 	render() {
 		return (
       <div className="game">
-      	<h2>current player: {this.state.currentPlayer}</h2>
-      	<h2>winner: {this.state.winner}</h2>
-	      <button onClick={this.startGame}>Start Game</button>
+      	{/* <h2>current player: {this.state.currentPlayer}</h2> */}
+      	{/*<h2>winner: {this.state.winner}</h2> */}
+	      {/*<button onClick={this.startGame}>Start Game</button>*/}
 	      <Board board={this.state.board} assignOwner={this.assignOwner}></Board>
       </div>
     );
